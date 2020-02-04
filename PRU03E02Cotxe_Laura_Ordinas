@@ -1,0 +1,91 @@
+public abstract class PRU03E02Cotxe_Laura_Ordinas  extends CotxeAbstracte{
+
+	//Tenemos que crear la variable de la clase EstatsMotorCotxe 
+	
+	
+	protected EstatsMotorCotxe estatsmotorcotxe;
+	int revolucions = (int) (Math.random() * 6500 +1);
+	
+	public PRU03E02Cotxe_Laura_Ordinas(String marca, String model, TipusCanvi tipuscanvi) {
+		super(marca, model, tipuscanvi);
+		this.marca =marca;
+		this.model = model;
+		this.tipuscanvi = tipuscanvi;
+		this.estatsmotorcotxe = EstatsMotorCotxe.Aturat;	
+	}
+	
+	//Se crean los getters y los setter de la clase Abstract
+
+	
+		
+			public String getMarca() {
+				return marca;
+			}
+			
+			public void setEstatsmotorcotxe(EstatsMotorCotxe estatsmotorcotxe) {
+				this.estatsmotorcotxe = estatsmotorcotxe;
+			}
+			
+			public void setMarca(String marca) {
+				this.marca = marca;
+			}
+			
+			public String getModel() {
+				return model;
+			}
+			
+			public void setModel(String model) {
+				this.model = model;
+			}
+			
+			public static TipusCanvi getTipuscanvi() {
+				return tipuscanvi;
+			}
+			
+			public void setTipuscanvi(TipusCanvi tipuscanvi) {
+				this.tipuscanvi = tipuscanvi;
+			}
+	
+		//Aqui son los métodos que se herendan de la interface
+			
+			@Override
+			public void arrancarMotor() throws Exception {
+				if (this.estatsmotorcotxe == EstatsMotorCotxe.Aturat) {
+					this.setEstatsmotorcotxe(EstatsMotorCotxe.EnMarxa);
+					System.out.println("Encendiendo el coche.");
+				}
+				else {
+					throw new Exception("El coche ya está encendido.");
+				}
+				
+			}
+			
+			@Override
+			public EstatsMotorCotxe comprovaMotor() {
+				return estatsmotorcotxe;
+			}
+			
+			@Override
+			public int getRevolucions() {
+				if(this.estatsmotorcotxe == EstatsMotorCotxe.Aturat) {
+					return 0;
+				}
+				else {
+					return revolucions;
+				}
+			}
+			@Override
+			public void aturarMotor() throws Exception {
+				if (this.estatsmotorcotxe == EstatsMotorCotxe.EnMarxa) {
+					this.setEstatsmotorcotxe(EstatsMotorCotxe.Aturat);
+					System.out.println("El coche se va a apagar");
+				}
+				else {
+					throw new Exception("Se ha apagado el coche");
+				}
+			
+	
+			}
+
+	}
+	
