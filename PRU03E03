@@ -1,0 +1,122 @@
+public class PRU03E03_Laura_Ordinas extends PRU03E02Cotxe_Laura_Ordinas {
+
+	//Es crea una nova variable que només està utilitzada en aquesta classe
+	public static CanviarMarxaAutomatic canviarMarxaAutomatic;
+	public static CanviarMarxaManual canviarMarxaManual;
+	public char aumentarDisminuirMarxa;
+
+	//Amb els atributs que s'herenden hem d'incorporar que tant el canvi manual com l'automatic han d'iniciar-se com a posicio neutra
+	public PRU03E03_Laura_Ordinas (String marca, String model, TipusCanvi tipuscanvi) {
+		super(marca, model, tipuscanvi);
+		this.canviarMarxaAutomatic = canviarMarxaAutomatic.Neutra;
+		this.canviarMarxaManual = canviarMarxaManual.Neutre;
+	}
+	
+	
+	//Mètodes get i set que s'han heredat en aquesta classe
+	public String getMarca() {
+		return marca;
+	}
+	
+	public String getModel() {
+		return model;
+	}
+	
+	public TipusCanvi getTipuscanvi(TipusCanvi tipuscanvi) {
+		return tipuscanvi = tipuscanvi;
+	}
+	
+	public String setMarca() {
+		return this.marca;
+	}
+
+	public String setModel() {
+		return this.model;
+	}
+	
+	public void setTipusCanvi (TipusCanvi tipuscanvi) {
+		this.tipuscanvi = tipuscanvi;
+	}
+	
+	
+	//Mètodes set i get d'aquesta classe
+
+	public void setCanviarMarxaAutomatic(CanviarMarxaAutomatic canviarMarxaAutomatic) {
+		this.CanviarMarxaAutomatic();
+	}
+	
+	public void setCanviarMarxaManual (CanviarMarxaManual canviarMarxaManual) {
+		this.canviarMarxaManual = canviarMarxaManual;
+	}
+	
+	public static CanviarMarxaAutomatic getCanviarMarxaAutomatic() {
+		return canviarMarxaAutomatic;
+	}
+	
+	public static CanviarMarxaManual getCanviarMarxaManual() {
+		return canviarMarxaManual;
+	}
+	
+
+	//Aqui hi ha el mètode quan el tipus canvi és igual a automàtic 
+	public void CanviarMarxaAutomatic(){		
+		if (getTipusCanvi() == TipusCanvi.CanviAutomatic) {
+				if (getCanviarMarxaAutomatic() == CanviarMarxaAutomatic.Neutra) {
+					canviarMarxaAutomatic = CanviarMarxaAutomatic.Avança;
+				}
+				else if
+					(getCanviarMarxaAutomatic() == CanviarMarxaAutomatic.Avança){
+						canviarMarxaAutomatic = CanviarMarxaAutomatic.Neutra;
+				}
+				else if 
+					(getCanviarMarxaAutomatic() == CanviarMarxaAutomatic.Neutra) {
+						canviarMarxaAutomatic = CanviarMarxaAutomatic.Enrera;
+				}	
+			}
+	}
+		
+			
+	//Aquí hi ha el mètode quan el tipus canvi és igual a manual 
+	public void CanviarMarxaManual() throws Exception{
+		if (getTipuscanvi() == TipusCanvi.CanviManual) {
+				if(getCanviarMarxaManual() == CanviarMarxaManual.Neutre) {
+					canviarMarxaManual = CanviarMarxaManual.Primera;
+				}
+				else if 
+					(getCanviarMarxaManual() == CanviarMarxaManual.Primera) {
+						canviarMarxaManual = CanviarMarxaManual.Segona;
+				}
+				else if
+					(getCanviarMarxaManual() == CanviarMarxaManual.Segona) {
+						canviarMarxaManual = CanviarMarxaManual.Tercera;
+				}
+				else if
+					(getCanviarMarxaManual() == CanviarMarxaManual.Tercera) {
+						canviarMarxaManual = CanviarMarxaManual.Quarta;
+				}
+				else if
+					(getCanviarMarxaManual() == CanviarMarxaManual.Quarta) {
+						canviarMarxaManual = CanviarMarxaManual.Cinquena;
+				}
+				else if
+					(getCanviarMarxaManual() == CanviarMarxaManual.Cinquena) {
+						canviarMarxaManual = CanviarMarxaManual.Sisena;
+				}
+				else if
+					(getCanviarMarxaManual() == CanviarMarxaManual.Sisena) {
+						throw new Exception ("No hi ha sèptima marxa");
+				}
+				//No hi ha sèptima marxa, però pot anar cap enrere	
+				else if
+					(getCanviarMarxaManual() == CanviarMarxaManual.Sisena) {
+						canviarMarxaManual = CanviarMarxaManual.Neutre;
+				}
+				else if 
+					(getCanviarMarxaManual() == CanviarMarxaManual.Neutre) {
+						canviarMarxaManual = CanviarMarxaManual.Enrere;
+				}
+		}
+			
+	}					
+}
+	
