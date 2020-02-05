@@ -1,0 +1,28 @@
+public abstract class CotxeAbstracte implements InterfaceCotxe{
+
+	
+	protected String marca;
+	protected String model;
+	protected static TipusCanvi tipuscanvi;
+	
+	//Aqui definim els setters dels atributs de la classe CotxeAbstracte
+	public CotxeAbstracte (String marca, String model, TipusCanvi tipuscanvi) {
+		this.marca=marca;
+		this.model=model;
+		this.tipuscanvi=tipuscanvi;
+	}
+
+	//A partir d'aqui definim els getters dels atributs de la classe CotxeAbstracte
+	public String getMarca() {
+		return marca;
+	}
+	
+	public String getModel() {
+		return model;
+	}
+	
+	public static  TipusCanvi getTipusCanvi() {
+		return tipuscanvi;
+	}
+	
+}
