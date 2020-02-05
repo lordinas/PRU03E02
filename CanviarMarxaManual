@@ -1,0 +1,14 @@
+
+public enum CanviarMarxaManual {
+
+	Enrere, 
+	Neutre, 
+	Primera, 
+	Segona, 
+	Tercera,
+	Quarta,
+	Cinquena,
+	Sisena;
+	
+	
+}
